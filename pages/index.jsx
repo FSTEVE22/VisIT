@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import { useRouter } from 'next/router';
 
 export default function Index() {
+	const LoginOk = () => {
+		const router = useRouter();
+		router.pathname('/dashboard');
+	};
 	return (
 		<>
 			<Header />
@@ -16,7 +21,12 @@ export default function Index() {
 						</div>
 
 						<div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-							<form className='space-y-6' action='#' method='POST'>
+							<form
+								// onSubmit={LoginOk}
+								className='space-y-6'
+								action='/dashboard'
+								// method='POST'
+							>
 								<div>
 									<label
 										htmlFor='email'
@@ -30,7 +40,7 @@ export default function Index() {
 											type='email'
 											autoComplete='email'
 											required
-											className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+											className='px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
 										/>
 									</div>
 								</div>
@@ -50,7 +60,7 @@ export default function Index() {
 											type='password'
 											autoComplete='current-password'
 											required
-											className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+											className='px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
 										/>
 									</div>
 								</div>

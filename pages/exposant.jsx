@@ -1,4 +1,4 @@
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -112,7 +112,8 @@ export default function Exposant() {
 										name='country'
 										autoComplete='country-name'
 										className='px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:max-w-xs sm:text-sm sm:leading-6'>
-										<option>Belgique</option>
+										<option></option>
+                                        <option>Belgique</option>
 										<option>France</option>
 									</select>
 								</div>
