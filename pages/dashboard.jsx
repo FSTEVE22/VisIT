@@ -10,11 +10,12 @@ import {
 } from '@heroicons/react/20/solid';
 import { BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Footer from '../components/footer';
+import Link from 'next/link';
 
 const navigation = [
 	{ name: 'Acceuil', href: '/dashboard' },
-	{ name: 'Stands', href: '#' },
-	{ name: 'Visiteurs', href: '#' },
+	{ name: 'Stands', href: '/stands' },
+	{ name: 'Visiteurs', href: '/visiteursDetails' },
 ];
 
 const stats = [
@@ -128,9 +129,9 @@ export default function Example() {
 					</div>
 					<nav className='hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-700'>
 						{navigation.map((item, itemIdx) => (
-							<a key={itemIdx} href={item.href}>
+							<Link key={itemIdx} href={item.href}>
 								{item.name}
-							</a>
+							</Link>
 						))}
 					</nav>
 					<div className='flex flex-1 items-center justify-end gap-x-8'>
@@ -270,8 +271,6 @@ export default function Example() {
 															colSpan={3}
 															className='relative isolate py-2 font-semibold'>
 															<time dateTime={day.dateTime}>{day.date}</time>
-															<div className='absolute inset-y-0 right-full -z-10 w-screen border-b border-gray-200 bg-gray-50' />
-															<div className='absolute inset-y-0 left-0 -z-10 w-screen border-b border-gray-200 bg-gray-50' />
 														</th>
 													</tr>
 													{day.transactions.map((transaction) => (
@@ -354,11 +353,11 @@ export default function Example() {
 								<h2 className='text-base font-semibold leading-7 text-gray-900'>
 									Stands
 								</h2>
-								<a
-									href='#'
+								<Link
+									href='/stands'
 									className='text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500'>
-									View all<span className='sr-only'>, clients</span>
-								</a>
+									View all<span className='sr-only'>, stands</span>
+								</Link>
 							</div>
 							<ul
 								role='list'

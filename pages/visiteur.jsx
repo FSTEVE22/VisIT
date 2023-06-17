@@ -149,7 +149,7 @@ export default function Example() {
 										name='interest'
 										id='interest'
 										autoComplete='interest'
-                                        placeholder='( ex: IT, marketing, medicine etc… )'
+										placeholder='( ex: IT, marketing, medicine etc… )'
 										className='px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:max-w-md sm:text-sm sm:leading-6'
 									/>
 								</div>
@@ -157,7 +157,36 @@ export default function Example() {
 						</div>
 					</div>
 				</div>
+				<div className='grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 pt-12 md:grid-cols-3'>
+					<div>
+						<h2 className='text-base font-semibold leading-7 text-gray-900'>
+							Sécurité
+						</h2>
+						<p className='mt-1 text-sm leading-6 text-gray-600'>
+							Choissisez un mot de passe solide pour une sécurité optimale de
+							votre compte
+						</p>
+					</div>
 
+					<div className='grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2'>
+						<div className='sm:col-span-4'>
+							<label
+								htmlFor='website'
+								className='block text-sm font-medium leading-6 text-gray-900'>
+								Mot de passe
+							</label>
+							<div className='mt-2'>
+								<input
+									type='password'
+									name='password'
+									id='password'
+									className='px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6'
+									placeholder='*******************'
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div className='mt-6 flex items-center justify-end gap-x-6'>
 					<button
 						type='submit'
