@@ -163,11 +163,10 @@ export default function Example() {
 							<div className='-ml-0.5'>
 								<a href='#' className='-m-1.5 block p-1.5'>
 									<span className='sr-only'>Your Company</span>
-									<img
-										className='h-8 w-auto'
-										src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-										alt=''
-									/>
+									<div className='flex items-center justify-center text-gray-500'>
+										<p className='font-bold text-3xl text-bottom mt-3'>Vis</p>
+										<p className='font-bold text-5xl'>IT</p>
+									</div>
 								</a>
 							</div>
 						</div>
