@@ -8,6 +8,7 @@ import {
 	EllipsisHorizontalIcon,
 	PlusSmallIcon,
 } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 import { BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Footer from '../components/footer';
 import Link from 'next/link';
@@ -38,48 +39,36 @@ const stats = [
 		changeType: 'positive',
 	},
 ];
-const statuses = {
-	Paid: 'text-green-700 bg-green-50 ring-green-600/20',
-	Withdraw: 'text-gray-600 bg-gray-50 ring-gray-500/10',
-	Overdue: 'text-red-700 bg-red-50 ring-red-600/10',
-};
-const days = [
+const visiteurs = [
 	{
-		dateTime: '2023-03-22',
-		transactions: [
-			{
-				id: 1,
-				invoiceNumber: '00012',
-				href: '#',
-				amount: '$7,600.00 USD',
-				tax: '$500.00',
-				status: 'Paid',
-				client: 'Reform',
-				description: 'Website redesign',
-				icon: ArrowUpCircleIcon,
-			},
-			{
-				id: 2,
-				invoiceNumber: '00011',
-				href: '#',
-				amount: '$10,000.00 USD',
-				status: 'Withdraw',
-				client: 'Tom Cook',
-				description: 'Salary',
-				icon: ArrowDownCircleIcon,
-			},
-			{
-				id: 3,
-				invoiceNumber: '00009',
-				href: '#',
-				amount: '$2,000.00 USD',
-				tax: '$130.00',
-				status: 'Overdue',
-				client: 'Tuple',
-				description: 'Logo design',
-				icon: ArrowPathIcon,
-			},
-		],
+		Nom: 'Kuete',
+		Prénom: 'Franck Steve',
+		tel: '+3248698547',
+		mail: 'Kuetefranck@gmail.com',
+		pays: 'Belgique',
+		ville: 'Bruxelles',
+		zipCode: '1006',
+		Interet: 'IT',
+	},
+	{
+		Nom: 'Kuete',
+		Prénom: 'Franck Steve',
+		tel: '+3248698547',
+		mail: 'Kuetefranck@gmail.com',
+		pays: 'Belgique',
+		ville: 'Bruxelles',
+		zipCode: '1006',
+		Interet: 'IT',
+	},
+	{
+		Nom: 'Kuete',
+		Prénom: 'Franck Steve',
+		tel: '+3248698547',
+		mail: 'Kuetefranck@gmail.com',
+		pays: 'Belgique',
+		ville: 'Bruxelles',
+		zipCode: '1006',
+		Interet: 'IT',
 	},
 ];
 const Stands = [
@@ -245,98 +234,86 @@ export default function Example() {
 
 				<div className='space-y-16 py-16 xl:space-y-20'>
 					{/* Recent activity table */}
+					
 					<div>
+					<header className='pb-4 sm:pb-6'>
 						<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 							<h2 className='mx-auto max-w-2xl text-base font-semibold leading-6 text-gray-900 lg:mx-0 lg:max-w-none'>
 								Visiteurs récent
 							</h2>
 						</div>
-						<div className='mt-6 overflow-hidden border-t border-gray-100'>
+					</header>
+						<div className='overflow-hidden border-t border-gray-100'>
 							<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 								<div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
 									<table className='w-full text-left'>
-										<thead className='sr-only'>
-											<tr>
-												<th>Amount</th>
-												<th className='hidden sm:table-cell'>Client</th>
-												<th>More details</th>
+										<thead>
+											<tr className='text-sm leading-6 text-gray-900'>
+												<th
+													scope='colgroup'
+													className='relative isolate py-2 font-semibold'></th>
+												<th
+													scope='colgroup'
+													className=' text-center hidden md:block relative isolate py-2 font-semibold'>
+													Addresse
+												</th>
+												<th
+													scope='colgroup'
+													className='text-right relative isolate py-2 font-semibold'>
+													Contact
+												</th>
 											</tr>
 										</thead>
 										<tbody>
-											{days.map((day) => (
-												<Fragment key={day.dateTime}>
-													<tr className='text-sm leading-6 text-gray-900'>
-														<th
-															scope='colgroup'
-															colSpan={3}
-															className='relative isolate py-2 font-semibold'>
-															<time dateTime={day.dateTime}>{day.date}</time>
-														</th>
-													</tr>
-													{day.transactions.map((transaction) => (
-														<tr key={transaction.id}>
-															<td className='relative py-5 pr-6'>
-																<div className='flex gap-x-6'>
-																	<transaction.icon
-																		className='hidden h-6 w-5 flex-none text-gray-400 sm:block'
-																		aria-hidden='true'
-																	/>
-																	<div className='flex-auto'>
-																		<div className='flex items-start gap-x-3'>
-																			<div className='text-sm font-medium leading-6 text-gray-900'>
-																				{transaction.amount}
-																			</div>
-																			<div
-																				className={classNames(
-																					statuses[transaction.status],
-																					'rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset'
-																				)}>
-																				{transaction.status}
-																			</div>
+											{visiteurs.map((item) => (
+												<Fragment key={item.tel}>
+													<tr className='hover:bg-gray-50'>
+														<td className='relative py-5 pr-6'>
+															<div className='flex gap-x-6'>
+																<div className='flex-auto'>
+																	<div className='flex items-start gap-x-3'>
+																		<Image
+																			width={25}
+																			height={25}
+																			src='/assets/User-Icon.jpg'
+																		/>
+																		<div className='text-sm font-medium leading-6 text-gray-900'>
+																			{item.Nom + ' ' + item.Prénom}
 																		</div>
-																		{transaction.tax ? (
-																			<div className='mt-1 text-xs leading-5 text-gray-500'>
-																				{transaction.tax} tax
-																			</div>
-																		) : null}
+																	</div>
+																	<div className='text-sm px-10 font-medium text-gray-700'>
+																		Interet : {item.Interet}
 																	</div>
 																</div>
-																<div className='absolute bottom-0 right-full h-px w-screen bg-gray-100' />
-																<div className='absolute bottom-0 left-0 h-px w-screen bg-gray-100' />
-															</td>
-															<td className='hidden py-5 pr-6 sm:table-cell'>
-																<div className='text-sm leading-6 text-gray-900'>
-																	{transaction.client}
-																</div>
-																<div className='mt-1 text-xs leading-5 text-gray-500'>
-																	{transaction.description}
-																</div>
-															</td>
-															<td className='py-5 text-right'>
-																<div className='flex justify-end'>
-																	<a
-																		href={transaction.href}
-																		className='text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500'>
-																		View
-																		<span className='hidden sm:inline'>
-																			{' '}
-																			transaction
-																		</span>
-																		<span className='sr-only'>
-																			, invoice #{transaction.invoiceNumber},{' '}
-																			{transaction.client}
-																		</span>
-																	</a>
-																</div>
-																<div className='mt-1 text-xs leading-5 text-gray-500'>
-																	Invoice{' '}
-																	<span className='text-gray-900'>
-																		#{transaction.invoiceNumber}
-																	</span>
-																</div>
-															</td>
-														</tr>
-													))}
+															</div>
+															<div className='absolute bottom-0 right-full h-px w-screen bg-gray-100' />
+															<div className='absolute bottom-0 left-0 h-px w-screen bg-gray-100' />
+														</td>
+														<td className='text-center hidden py-5 pr-6 sm:table-cell'>
+															<div className='text-sm leading-6 text-gray-900'>
+																{item.pays +
+																	', ' +
+																	item.zipCode +
+																	' ' +
+																	item.ville}
+															</div>
+														</td>
+
+														<td className='py-5 text-right'>
+															<div className='flex justify-end'>
+																<a
+																	href={`mailto: ${item.mail}`}
+																	className='text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500'>
+																	{item.mail}
+																</a>
+															</div>
+															<div className='mt-1 text-md font-bold leading-5 text-gray-500'>
+																<span className='text-gray-900'>
+																	{item.tel}
+																</span>
+															</div>
+														</td>
+													</tr>
 												</Fragment>
 											))}
 										</tbody>
