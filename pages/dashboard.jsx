@@ -19,20 +19,20 @@ const navigation = [
 const stats = [
 	{
 		name: 'Nombres total de visiteurs',
-		value: '5091',
-		change: '+4.75%',
+		value: '0',
+		change: '0%',
 		changeType: 'positive',
 	},
 	{
 		name: 'Nombre de visit du site web',
-		value: '3300',
-		change: '+54.02%',
+		value: '0',
+		change: '0%',
 		changeType: 'positive',
 	},
 	{
 		name: 'Visiteurs à recontacter',
-		value: '1056',
-		change: '+1.39%',
+		value: '0',
+		change: '0%',
 		changeType: 'positive',
 	},
 ];
