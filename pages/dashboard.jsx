@@ -24,7 +24,7 @@ const stats = [
 		changeType: 'positive',
 	},
 	{
-		name: 'Nombre de visit du site web',
+		name: 'Nombre de visite du site web',
 		value: '0',
 		change: '0%',
 		changeType: 'positive',
