@@ -11,7 +11,7 @@ export default function User() {
 				<div className='gap-5 grid text-center lg:mb-0 lg:grid-cols-2 lg:text-left'>
 					<Link
 						href='/exposant'
-						className='mb-5 lg:mb-0 group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'>
+						className='mb-5 lg:mb-0 group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200'>
 						<h2 className={`mb-3 text-2xl font-semibold`}>
 							Je suis exposant{' '}
 							<Image
@@ -28,7 +28,7 @@ export default function User() {
 
 					<Link
 						href='/visiteur'
-						className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30'>
+						className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 '>
 						<h2 className={`mb-3 text-2xl font-semibold`}>
 							Je suis visiteur{' '}
 							<Image

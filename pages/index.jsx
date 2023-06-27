@@ -11,20 +11,40 @@ export default function Index() {
 	const [show, setShow] = useState(false);
 	const router = useRouter();
 
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [loginError, setLoginError] = useState(false);
+
 	const LoginOk = (event) => {
 		event.preventDefault();
-		setShow(true);
-		setTimeout(() => {
-			setShow(false);
-			router.push('/dashboard');
-		}, 2000);
-
+		if (email == 'kuetefranck@gmail.com' && password == 'KNfs@2205') {
+			setLoginError(false);
+			setShow(true);
+			setTimeout(() => {
+				setShow(false);
+				router.push('/dashboard');
+			}, 2000);
+		} else {
+			setLoginError(true);
+			setTimeout(() => {
+				setLoginError(false);
+			}, 2000);
+		}
 		event.preventDefault();
 	};
 	return (
 		<>
 			<Header />
-			<div className='h-[80vh] bg-gray-100'>
+			<div className='h-[80vh] bg-gray-100 relative'>
+				<div
+					className={
+						loginError
+							? 'absolute right-2 items-center justify-center align-center top-2 bg-red-400 flex p-3 rounded-lg text-white font-bold'
+							: 'hidden'
+					}>
+					<XMarkIcon height={30} />
+					<h3>Wrong Credidentials!</h3>
+				</div>
 				<div className='h-full'>
 					<div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
 						<div className='sm:mx-auto sm:w-full sm:max-w-sm'>
@@ -43,6 +63,8 @@ export default function Index() {
 									</label>
 									<div className='mt-2'>
 										<input
+											onChange={(e) => setEmail(e.target.value)}
+											defaultValue={email}
 											id='email'
 											name='email'
 											type='email'
@@ -63,6 +85,8 @@ export default function Index() {
 									</div>
 									<div className='mt-2'>
 										<input
+											onChange={(e) => setPassword(e.target.value)}
+											defaultValue={password}
 											id='password'
 											name='password'
 											type='password'
